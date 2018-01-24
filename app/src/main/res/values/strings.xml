@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Final Project</string>
+    <string name="welcome">Welcome</string>
+    <string name="please_enter_your_name">Please enter Your Name</string>
+    <string name="let_s_go">Let\'s Go</string>
+    <string name="enter_name">Please Enter a Valid Name</string>
+    <string name="question1">1- How many pieces does the chess contain ?</string>
+    <string name="please_write_your_answer">Please write your answer</string>
+    <string name="hi">Hi\n</string>
+    <string name="question2">2- How does the queen move?</string>
+    <string name="diagonally_forward">Diagonally Forward</string>
+    <string name="diagonally_backward">Diagonally Backward</string>
+    <string name="straghit_forward">Straghit Forward</string>
+    <string name="straghit_backward">Straghit Backward</string>
+    <string name="diagonally_only">Diagonally Only</string>
+    <string name="straghit_only">Straghit Only</string>
+    <string name="question3">3- If there is a checkmate threat can you put another piece to protect the king?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="question4">4- Can the pawn move backwardly?</string>
+    <string name="question5">5- Can the king take down the piece that threats him if it was in his scope of moves?</string>
+    <string name="question6">6- How many squares does the chess board contains?</string>
+    <string name="_32">32</string>
+    <string name="_64">64</string>
+    <string name="_68">68</string>
+    <string name="_72">72</string>
+    <string name="question7">7- Can you promote a pawn to a queen?</string>
+    <string name="submit">Submit</string>
+    <string name="background">background</string>
+    <string name="thank_you">Thank You\n</string>
+    <string name="you_answered">You answered</string>
+    <string name="start_over">Start Over</string>
+    <string name="wrong_questions">wrong questions</string>
+    <string name="right_questions">right questions</string>
+    <string name="share_result">Share Result</string>
+</resources>
