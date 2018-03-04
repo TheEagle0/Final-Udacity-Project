@@ -13,7 +13,7 @@ public class ScoreSheet extends AppCompatActivity implements View.OnClickListene
     private int wrongAnswers;
     private TextView score_tv, name_tv;
     private Button share_btn, startOver_btn;
-    private String finalScore;
+    private  String score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +34,9 @@ public class ScoreSheet extends AppCompatActivity implements View.OnClickListene
     }
 
     private void updateUi() {
-        String wrong = String.valueOf(wrongAnswers);
-        String right = String.valueOf(rightAnswers);
-        finalScore = right + getString(R.string.right_questions) + "\n" + wrong + getString(R.string.wrong_questions);
-        score_tv.setText(finalScore);
+        String finalScore = getString(R.string.the_score);
+        score= String.format(finalScore, rightAnswers,wrongAnswers);
+        score_tv.setText(score);
         String thanksMessage = getResources().getString(R.string.thank_you) + userName;
         name_tv.setText(thanksMessage);
     }
@@ -72,7 +71,7 @@ public class ScoreSheet extends AppCompatActivity implements View.OnClickListene
     private void share() {
         Intent shareIntent = new Intent();
         shareIntent.setAction(Intent.ACTION_SEND);
-        shareIntent.putExtra(Intent.EXTRA_TEXT, finalScore);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, score);
         shareIntent.setType("text/plain");
         startActivity(shareIntent);
     }

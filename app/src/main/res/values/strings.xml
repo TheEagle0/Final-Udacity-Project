@@ -28,7 +28,7 @@
     <string name="submit">Submit</string>
     <string name="background">background</string>
     <string name="thank_you">Thank You\n</string>
-    <string name="you_answered">You answered</string>
+    <string name="the_score">You answered\n %1$d right questions \n %2$d wrong questions</string>
     <string name="start_over">Start Over</string>
     <string name="wrong_questions">wrong questions</string>
     <string name="right_questions">right questions</string>

@@ -40,22 +40,6 @@
                 app:cardBackgroundColor="@color/background"
 
                 >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/answers_score_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="cursive"
-                android:text="@string/you_answered"
-                android:textAlignment="center"
-                android:textColor="@color/textColor2"
-                android:textSize="@dimen/dim_54sp"
-                android:textStyle="bold|italic" />
 
             <TextView
                 android:id="@+id/score_tv"
@@ -69,7 +53,6 @@
                 android:textSize="@dimen/dim_28sp"
                 android:textStyle="bold|italic"
                 />
-                </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
 
