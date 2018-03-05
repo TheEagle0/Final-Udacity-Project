@@ -36,7 +36,7 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
     private void getUserName() {
         Intent intent = getIntent();
         userName = intent.getStringExtra("name");
-        String welcome = getResources().getString(R.string.hi) + userName;
+        String welcome = String.format(getResources().getString(R.string.hi), userName);
         name_tv.setText(welcome);
     }
 

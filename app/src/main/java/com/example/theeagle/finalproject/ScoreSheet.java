@@ -34,10 +34,9 @@ public class ScoreSheet extends AppCompatActivity implements View.OnClickListene
     }
 
     private void updateUi() {
-        String finalScore = getString(R.string.the_score);
-        score= String.format(finalScore, rightAnswers,wrongAnswers);
+        score= String.format(getString(R.string.the_score), rightAnswers,wrongAnswers);
         score_tv.setText(score);
-        String thanksMessage = getResources().getString(R.string.thank_you) + userName;
+        String thanksMessage = String.format(getResources().getString(R.string.thank_you), userName);
         name_tv.setText(thanksMessage);
     }
 
