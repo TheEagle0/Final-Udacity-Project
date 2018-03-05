@@ -17,7 +17,7 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
     private TextView name_tv;
     private EditText q1_editText;
     private RadioGroup q3_radioGroup, q4_radioGroup, q5_radioGroup, q6_radioGroup, q7_radioGroup;
-    private CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6;
+    private CheckBox q2_checkBox1, q2_checkBox2, q2_checkBox3, q2_checkBox4, q2_checkBox5, q2_checkBox6;
     private Button submit;
     private int rightAnswers;
     private int wrongAnswers;
@@ -43,12 +43,12 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
     private void initViews() {
         name_tv = findViewById(R.id.name_tv);
         q1_editText = findViewById(R.id.question1);
-        checkBox1 = findViewById(R.id.q2_checkBox_1);
-        checkBox2 = findViewById(R.id.q2_checkBox_2);
-        checkBox3 = findViewById(R.id.q2_checkBox_3);
-        checkBox4 = findViewById(R.id.q2_checkBox_4);
-        checkBox5 = findViewById(R.id.q2_checkBox_5);
-        checkBox6 = findViewById(R.id.q2_checkBox_6);
+        q2_checkBox1 = findViewById(R.id.q2_checkBox_1);
+        q2_checkBox2 = findViewById(R.id.q2_checkBox_2);
+        q2_checkBox3 = findViewById(R.id.q2_checkBox_3);
+        q2_checkBox4 = findViewById(R.id.q2_checkBox_4);
+        q2_checkBox5 = findViewById(R.id.q2_checkBox_5);
+        q2_checkBox6 = findViewById(R.id.q2_checkBox_6);
         q3_radioGroup = findViewById(R.id.q3_radioGroup);
         q4_radioGroup = findViewById(R.id.q4_radioGroup);
         q5_radioGroup = findViewById(R.id.q5_radioGroup);
@@ -130,9 +130,9 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
     }
 
     private void q2Answer() {
-        if (checkBox1.isChecked() && checkBox2.isChecked() && checkBox3.isChecked()
-                && checkBox4.isChecked()) {
-            if (checkBox5.isChecked() || checkBox6.isChecked()) {
+        if (q2_checkBox1.isChecked() && q2_checkBox2.isChecked() && q2_checkBox3.isChecked()
+                && q2_checkBox4.isChecked()) {
+            if (q2_checkBox5.isChecked() || q2_checkBox6.isChecked()) {
                 wrongAnswers++;
             } else rightAnswers++;
 
