@@ -10,6 +10,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText name;
     private Button next;
+    private String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +34,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         getName();
-        }
+        startActivity(new Intent(this, Questions.class)
+                .putExtra("name", userName));
+        finish();
+    }
 
     private void getName() {
         if (name.getText().length() < 1) {
             name.setError(getString(R.string.enter_name));
         } else {
-            String userName = name.getText().toString().trim();
-            startActivity(new Intent(this, Questions.class)
-                    .putExtra("name", userName));
-            finish();
+            userName = name.getText().toString().trim();
+
         }
     }
 }

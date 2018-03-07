@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Questions extends AppCompatActivity implements View.OnClickListener,
@@ -16,8 +17,8 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
 
     private TextView name_tv;
     private EditText q1_editText;
-    private RadioGroup q3_radioGroup, q4_radioGroup, q5_radioGroup, q6_radioGroup, q7_radioGroup;
-    private CheckBox q2_checkBox1, q2_checkBox2, q2_checkBox3, q2_checkBox4, q2_checkBox5, q2_checkBox6;
+    private RadioGroup q3RadioGroup, q4RadioGroup, q5RadioGroup, q6RadioGroup, q7RadioGroup;
+    private CheckBox q2CheckBox1, q2CheckBox2, q2CheckBox3, q2CheckBox4, q2CheckBox5, q2CheckBox6;
     private Button submit;
     private int rightAnswers;
     private int wrongAnswers;
@@ -43,33 +44,36 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
     private void initViews() {
         name_tv = findViewById(R.id.name_tv);
         q1_editText = findViewById(R.id.question1);
-        q2_checkBox1 = findViewById(R.id.q2_checkBox_1);
-        q2_checkBox2 = findViewById(R.id.q2_checkBox_2);
-        q2_checkBox3 = findViewById(R.id.q2_checkBox_3);
-        q2_checkBox4 = findViewById(R.id.q2_checkBox_4);
-        q2_checkBox5 = findViewById(R.id.q2_checkBox_5);
-        q2_checkBox6 = findViewById(R.id.q2_checkBox_6);
-        q3_radioGroup = findViewById(R.id.q3_radioGroup);
-        q4_radioGroup = findViewById(R.id.q4_radioGroup);
-        q5_radioGroup = findViewById(R.id.q5_radioGroup);
-        q6_radioGroup = findViewById(R.id.q6_radioGroup);
-        q7_radioGroup = findViewById(R.id.q7_radioGroup);
+        q2CheckBox1 = findViewById(R.id.q2_checkBox_1);
+        q2CheckBox2 = findViewById(R.id.q2_checkBox_2);
+        q2CheckBox3 = findViewById(R.id.q2_checkBox_3);
+        q2CheckBox4 = findViewById(R.id.q2_checkBox_4);
+        q2CheckBox5 = findViewById(R.id.q2_checkBox_5);
+        q2CheckBox6 = findViewById(R.id.q2_checkBox_6);
+        q3RadioGroup = findViewById(R.id.q3_radioGroup);
+        q4RadioGroup = findViewById(R.id.q4_radioGroup);
+        q5RadioGroup = findViewById(R.id.q5_radioGroup);
+        q6RadioGroup = findViewById(R.id.q6_radioGroup);
+        q7RadioGroup = findViewById(R.id.q7_radioGroup);
         submit = findViewById(R.id.submit);
         listeners();
     }
 
     private void listeners() {
         submit.setOnClickListener(this);
-        q3_radioGroup.setOnCheckedChangeListener(this);
-        q4_radioGroup.setOnCheckedChangeListener(this);
-        q5_radioGroup.setOnCheckedChangeListener(this);
-        q6_radioGroup.setOnCheckedChangeListener(this);
-        q7_radioGroup.setOnCheckedChangeListener(this);
+        q3RadioGroup.setOnCheckedChangeListener(this);
+        q4RadioGroup.setOnCheckedChangeListener(this);
+        q5RadioGroup.setOnCheckedChangeListener(this);
+        q6RadioGroup.setOnCheckedChangeListener(this);
+        q7RadioGroup.setOnCheckedChangeListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
+        Toast.makeText(this, getResources()
+                .getString(R.string.the_score, rightAnswers, wrongAnswers),
+                Toast.LENGTH_SHORT).show();
         getNumberOfPieces();
         startActivity(new Intent(this, ScoreSheet.class)
                 .putExtra("right answers", rightAnswers)
@@ -81,14 +85,14 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        if (group == q3_radioGroup) {
+        if (group == q3RadioGroup) {
             if (checkedId == R.id.q3_radioButton1) {
                 rightAnswers++;
             } else {
                 wrongAnswers++;
             }
         }
-        if (group == q4_radioGroup) {
+        if (group == q4RadioGroup) {
             if (checkedId == R.id.q4_radioButton2) {
                 rightAnswers++;
 
@@ -96,7 +100,7 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
                 wrongAnswers++;
             }
         }
-        if (group == q5_radioGroup) {
+        if (group == q5RadioGroup) {
             if (checkedId == R.id.q5_radiobutton1) {
                 rightAnswers++;
 
@@ -104,7 +108,7 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
                 wrongAnswers++;
             }
         }
-        if (group == q6_radioGroup) {
+        if (group == q6RadioGroup) {
             if (checkedId == R.id.q6_radiobutton3) {
                 rightAnswers++;
 
@@ -112,7 +116,7 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
                 wrongAnswers++;
             }
         }
-        if (group == q7_radioGroup) {
+        if (group == q7RadioGroup) {
             if (checkedId == R.id.q7_radioButton1) {
                 rightAnswers++;
 
@@ -130,9 +134,9 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
     }
 
     private void q2Answer() {
-        if (q2_checkBox1.isChecked() && q2_checkBox2.isChecked() && q2_checkBox3.isChecked()
-                && q2_checkBox4.isChecked()) {
-            if (q2_checkBox5.isChecked() || q2_checkBox6.isChecked()) {
+        if (q2CheckBox1.isChecked() && q2CheckBox2.isChecked() && q2CheckBox3.isChecked()
+                && q2CheckBox4.isChecked()) {
+            if (q2CheckBox5.isChecked() || q2CheckBox6.isChecked()) {
                 wrongAnswers++;
             } else rightAnswers++;
 

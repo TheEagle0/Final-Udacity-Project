@@ -5,12 +5,13 @@
     android:layout_height="match_parent"
     android:background="@mipmap/image1"
     tools:context=".MainActivity">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background"
-        android:contentDescription="@string/background"
-        />
+        android:contentDescription="@string/background" />
+
     <TextView
         android:id="@+id/welcome_tv"
         android:layout_width="match_parent"
@@ -30,9 +31,9 @@
         android:hint="@string/please_enter_your_name"
         android:inputType="text"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
         android:textColorHint="@color/textColor2"
-        android:textSize="@dimen/dim_28sp"
-        android:textColor="@android:color/white"/>
+        android:textSize="@dimen/dim_28sp" />
 
     <Button
         android:id="@+id/start"
