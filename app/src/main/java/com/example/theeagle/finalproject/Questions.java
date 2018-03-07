@@ -71,16 +71,16 @@ public class Questions extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(this, getResources()
-                .getString(R.string.the_score, rightAnswers, wrongAnswers),
-                Toast.LENGTH_SHORT).show();
+
         getNumberOfPieces();
         startActivity(new Intent(this, ScoreSheet.class)
                 .putExtra("right answers", rightAnswers)
                 .putExtra("wrong answer", wrongAnswers)
                 .putExtra("name", userName));
         finish();
-
+        Toast.makeText(this, getResources()
+                        .getString(R.string.the_score, rightAnswers, wrongAnswers),
+                Toast.LENGTH_SHORT).show();
     }
 
     @Override
